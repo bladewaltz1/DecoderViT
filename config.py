@@ -130,6 +130,24 @@ _C.MODEL.SWIN_MLP.MLP_RATIO = 4.
 _C.MODEL.SWIN_MLP.APE = False
 _C.MODEL.SWIN_MLP.PATCH_NORM = True
 
+_C.MODEL.DECVIT = CN()
+_C.MODEL.DECVIT.patch_size = 16
+_C.MODEL.DECVIT.image_size = 224
+_C.MODEL.DECVIT.enc_dim = 768
+_C.MODEL.DECVIT.enc_nhead = 12
+_C.MODEL.DECVIT.enc_ffndim = 3072
+_C.MODEL.DECVIT.enc_dropout = 0.0
+_C.MODEL.DECVIT.dec_dim = 384
+_C.MODEL.DECVIT.dec_nhead = 8
+_C.MODEL.DECVIT.dec_ffn_dim = 2048
+_C.MODEL.DECVIT.dec_dropout = 0.0
+_C.MODEL.DECVIT.num_layers_per_block = 1
+_C.MODEL.DECVIT.num_blocks = 6
+_C.MODEL.DECVIT.num_queries = 32
+_C.MODEL.DECVIT.num_classes = 1000
+_C.MODEL.DECVIT.layer_norm_eps = 1e-8
+_C.MODEL.DECVIT.initializer_range = 0.02
+
 # -----------------------------------------------------------------------------
 # Training settings
 # -----------------------------------------------------------------------------

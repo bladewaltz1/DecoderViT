@@ -1,0 +1,20 @@
+MODEL:
+  TYPE: decoder_vit
+  NAME: decoder_vit_base
+  DECVIT:
+    patch_size: 16
+    image_size: 224
+    enc_dim: 768
+    enc_nhead: 12
+    enc_ffndim: 3072
+    enc_dropout: 0.0
+    dec_dim: 384
+    dec_nhead: 8
+    dec_ffn_dim: 2048
+    dec_dropout: 0.0
+    num_layers_per_block: 1
+    num_blocks: 6
+    num_queries: 32
+    num_classes: 1000
+    layer_norm_eps: 1e-8
+    initializer_range: 0.02

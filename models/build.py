@@ -5,6 +5,7 @@
 # Written by Ze Liu
 # --------------------------------------------------------
 
+from .decoder_vit import DecoderViT
 from .swin_transformer import SwinTransformer
 from .swin_transformer_v2 import SwinTransformerV2
 from .swin_transformer_moe import SwinTransformerMoE
@@ -110,6 +111,8 @@ def build_model(config):
                         ape=config.MODEL.SWIN_MLP.APE,
                         patch_norm=config.MODEL.SWIN_MLP.PATCH_NORM,
                         use_checkpoint=config.TRAIN.USE_CHECKPOINT)
+    elif model_type == "decoder_vit":
+        model = DecoderViT(config.MODEL.DECVIT)
     else:
         raise NotImplementedError(f"Unkown model: {model_type}")
 

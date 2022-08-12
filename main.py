@@ -241,7 +241,7 @@ def validate(config, data_loader, model):
         target = target.cuda(non_blocking=True)
 
         # compute output
-        with torch.cuda.amp.autocast(enabled=config.AMP_ENABLE):
+        with torch.cuda.amp.autocast(enabled=False):
             output = model(images)
 
         # measure accuracy and record loss
