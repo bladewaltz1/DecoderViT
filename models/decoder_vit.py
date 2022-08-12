@@ -231,23 +231,3 @@ class DecoderViT(nn.Module):
 
 def _get_clones(module, N):
     return nn.ModuleList([copy.deepcopy(module) for _ in range(N)])
-
-
-"""
-python -m torch.distributed.launch \
-    --nproc_per_node 2 \
-    --master_port 12345 \
-    main.py \
-    --cfg configs/decvit/decvit_base.yaml \
-    --data-path /mnt/bearcat/imagenet/ \
-    --batch-size 128 
-
-imgs = sorted(os.listdir("val"))
-f = open("ILSVRC2012_devkit_t12/data/ILSVRC2012_validation_ground_truth.txt")
-cats = f.readlines()
-for img, cat in zip(imgs, cats):
-    cat = cat.strip()
-    if not os.path.exists(f"val2/{cat}"):
-        os.mkdir(f"val2/{cat}")
-    os.system(f"cp val/{img} val2/{cat}/{img}")
-"""
